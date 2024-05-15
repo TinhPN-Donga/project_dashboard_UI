@@ -6,12 +6,11 @@ import Search from './right/Search';
 import Notification from './right/Notification';
 import Setting from './right/Setting';
 
-
 function Header(props) {
     return (
-        <Box sx={{ width: 1, display: 'flex', p: 1 }} >
-            <Box sx={{ width: '290px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <Box sx={{ width: '50%' }}>
+        <>
+            <Box sx={{ width: 220, display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                <Box sx={{ width: '50%', display: { xs: 'none', md: 'block' } }}>
                     <ButtonBase disableRipple to='dashboard'><img src={logoPNG.logoDongA} alt='logo' width='100%' /></ButtonBase>
                 </Box>
                 <Box>
@@ -32,17 +31,14 @@ function Header(props) {
                             <MenuIcon />
                         </Avatar>
                     </ButtonBase >
-                </Box>
-            </Box>
-            <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <Search />
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Notification />
-                    <Box sx={{width: '1rem'}}/>
-                    <Setting />
-                </Box>
-            </Box>
-        </Box>
+                </Box></Box>
+            <Search />
+            <Box sx={{ flexGrow: 1 }} />
+            <Box sx={{ flexGrow: 1 }} />
+            <Notification />
+            <Box sx={{ width: '1rem' }} />
+            <Setting />
+        </>
     );
 }
 export default Header;

@@ -7,7 +7,7 @@ import NearMeIcon from '@mui/icons-material/NearMe';
 
 const OutlineInputStyle = styled(OutlinedInput, { shouldForwardProp })(({ theme }) => ({
     width: 360,
-    marginLeft: 20,
+    marginLeft: 36,
     paddingLeft: 10,
     paddingRight: 10,
     '& input': {
@@ -27,7 +27,7 @@ export default function Search(props) {
     const [value, setValue] = useState('');
     const theme = useTheme();
     return <>
-        <Box sx={{ display: { xs: 'none', md: 'block', borderRadius: '10px', marginLeft: '1.5rem'} }}>
+        <Box sx={{ display: { xs: 'none', md: 'block', borderRadius: '10px'} }}>
             <OutlineInputStyle
                 id="input-search-header"
                 value={value}
