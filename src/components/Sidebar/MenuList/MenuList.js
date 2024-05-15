@@ -6,14 +6,10 @@ import PermMedia from '@mui/icons-material/PermMedia';
 import Dns from '@mui/icons-material/Dns';
 import Public from '@mui/icons-material/Public';
 import { Divider, Typography, Collapse, List } from '@mui/material';
-import MenuIem from '../MenuItem/MenuItem'
-const data = [
-    { icon: <People />, label: 'Authentication' },
-    { icon: <Dns />, label: 'Database' },
-    { icon: <PermMedia />, label: 'Storage' },
-    { icon: <Public />, label: 'Hosting' },
-];
-
+import MenuGroup from '../MenuGroup/MenuGroup'
+import DevicesOutlinedIcon from '@mui/icons-material/DevicesOutlined';
+import GridViewOutlinedIcon from '@mui/icons-material/GridViewOutlined';
+import CellTowerOutlinedIcon from '@mui/icons-material/CellTowerOutlined';
 const menuListData = [
     {
         id: 'overview',
@@ -23,7 +19,7 @@ const menuListData = [
             {
                 id: 'dashboard',
                 type: 'item',
-                icon: '',
+                icon: <GridViewOutlinedIcon />,
                 title: 'Dashboard'
             }
         ]
@@ -37,7 +33,7 @@ const menuListData = [
                 id: 'Gateway',
                 title: 'Gateway',
                 type: 'collapse',
-                icon: '',
+                icon: <CellTowerOutlinedIcon/>,
                 children: [
                     {
                         id: 'Gateway 1',
@@ -57,7 +53,7 @@ const menuListData = [
                 id: 'Device',
                 title: 'Device',
                 type: 'collapse',
-                icon: '',
+                icon: <DevicesOutlinedIcon />,
                 children: [
                     {
                         id: 'Device 1',
@@ -81,7 +77,7 @@ export default function MenuList() {
 
     return (
         <>
-            {menuListData.map((value, index) => <MenuIem item={value} />)}
+            {menuListData.map((value, index) => <MenuGroup key={value.id} item={value} />)}
         </>
     );
 }
